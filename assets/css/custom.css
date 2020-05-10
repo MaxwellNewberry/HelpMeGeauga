@@ -10,8 +10,6 @@
     width: 80%;
 }
 
-/* stylelint-disable selector-list-comma-newline-after */
-
 .blog-header {
     line-height: 1;
     border-bottom: 1px solid #e5e5e5;
@@ -26,17 +24,42 @@
     text-decoration: none;
 }
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
 
-  h3 {
-      font-size: 24px;
-  }
-  
-  .display-4 {
-    font-size: 2.5rem;
-  }
+h3 {
+    font-size: 24px;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+}
+
+input:focus, textarea:focus {
+  outline: 0;
+  border: none !important;
+  border-bottom: solid 1px #dcdcdc !important;
+  box-shadow: none !important;
+}
+
+.contact-form input {
+  border: none; /* remove bootstrap style */
+  border-bottom: solid 1px #dcdcdc;
+  border-radius: 0;
+}
+
+.contact-form textarea {
+  border: solid 1px #dcdcdc;
+  border-radius: 0;
+  height: 100px; 
+  resize: none;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
   @media (min-width: 768px) {
     .display-4 {
       font-size: 3rem;

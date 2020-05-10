@@ -1,0 +1,227 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Help Me Geauga | Police</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+    
+        <nav>
+
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                  <div class="col-12 text-center">
+                    <a class="header-logo text-dark" href="index.html">Help Me Geauga</a>
+                  </div>
+                </div>
+            </header>
+    
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                  <a class="p-2 text-muted" href="index.html">Home</a>
+                  <a class="p-2 text-muted" href="police.html">Police</a>
+                  <a class="p-2 text-muted" href="fire.html">Fire</a>
+                  <a class="p-2 text-muted" href="public-health.html">Public Health</a>
+                  <a class="p-2 text-muted" href="human-services.html">Human Services</a>
+                  <a class="p-2 text-muted" href="contact.html">Contact</a>
+                </nav>
+            </div>
+    
+        </nav>
+
+        <div class="text-center">
+            <img src="assets/img/logo.jpg" alt="Logo" class="logo-class" />
+            <h2>Help Me Geauga</h2>
+            <p class="lead">The sections below are the several hard-working police departments throughout Geauga County.</p>
+        </div>
+
+        <section class="mb-4">
+        
+            <div class="row contact-form">
+        
+                <!--Grid column-->
+                <div class="col-md-9 mb-md-0 mb-5">
+                    <form id="contact-form" name="contact-form" action="process.php" method="POST">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="status alert" role="alert"></div>
+                            </div>
+                        </div>
+        
+                        <!--Grid row-->
+                        <div class="row">
+        
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="name" name="name" class="form-control" autocomplete="off">
+                                    <label for="name" class="">Your name</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+        
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="email" name="email" class="form-control" autocomplete="off">
+                                    <label for="email" class="">Your email</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+        
+                        </div>
+                        <!--Grid row-->
+        
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="subject" name="subject" class="form-control" autocomplete="off">
+                                    <label for="subject" class="">Subject</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+        
+                        <!--Grid row-->
+                        <div class="row">
+        
+                            <!--Grid column-->
+                            <div class="col-md-12">
+        
+                                <div class="md-form">
+                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                    <label for="message">Your message</label>
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!--Grid row-->
+        
+                    </form>
+        
+                    <div class="text-center text-md-left">
+                        <button type="button" class="btn btn-primary" onclick="validateForm();">Send</button>
+                    </div>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-md-3 text-center">
+                    <ul class="list-unstyled mb-0">
+                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                            <p>San Francisco, CA 94126, USA</p>
+                        </li>
+        
+                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                            <p>+ 01 234 567 89</p>
+                        </li>
+        
+                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                            <p>contact@mdbootstrap.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+        
+            </div>
+        
+        </section>
+
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2020 Help Me Geauga</p>
+        </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /*
+            FORM VALIDATION
+            (CLIENT-SIDED VALIDATION)
+            (SERVER-SIDED PROCESSING)
+        */
+        var validateForm = () => {
+            var processPage = $('#contact-form').attr('action');
+            var errors = []; // Error array
+
+            /* Clear old alerts */
+            $('.status').html('');
+            $('.status').removeClass('alert-danger');
+            $('.status').removeClass('alert-success');
+
+            // Check if name is empty
+            if($('input[name=name]').val() == "") {
+                errors.push('Name cannot be empty. <br />');
+            }
+            // Check if email is empty
+            if($('input[name=email]').val() == "") {
+                errors.push('Email cannot be empty. <br />');
+            } else {
+                // Validate email
+                var emailVal = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if(!emailVal.test($('input[name=email]').val())) {
+                    errors.push('Email is not valid.');
+                }
+            }
+            // Check if subject is empty
+            if($('input[name=subject]').val() == "") {
+                errors.push('Subject cannot be empty.');
+            }
+            // Check if message is empty
+            if($('textarea[name=message]').val() == "") {
+                errors.push('Message cannot be empty.');
+            }
+
+            if(errors.length > 0) {
+                // Add style
+                $('.status').addClass('alert-danger');
+
+                // Display errors
+                $('.status').append('The following errors occurred: <ul>');
+                errors.forEach(element => $('.status').append('<li>' + element + '</li>'));
+                $('.status').append('</ul>');
+
+                return;
+            }
+
+            /* If we get this far, that means there are no errors. */
+
+            // Send information to server side.
+            var formData = {
+                'name'     : $('input[name=name]').val(),
+                'email'    : $('input[name=email]').val(),
+                'subject'  : $('input[name=subject]').val(),
+                'message'  : $('textarea[name=message]').val()
+            };
+
+            $.ajax({
+                url : processPage,
+                type: "POST",
+                data : formData,
+                success: function(data, textStatus, jqXHR) {
+                    $('.status').text(data.message);
+                    if (data.code)
+                    $('#contact-form').closest('form').find("input[type=text], textarea").val(""); // Reset form
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $('.status').text(jqXHR);
+                }
+            });
+
+        }
+    </script>
+    </body>
+</html>
